@@ -54,7 +54,7 @@ contract Auction {
     }
 
     function bid() public payable notEnded hasStarted notOwner isHighestBid {
-        // if the highest bid has been overtaken, the previous highest bidder can withdraw all his money, including his highest bid 
+        // if the highest bid has been overtaken, the previous highest bidder can withdraw all his money (including his highest bid) 
         if (highestBid != 0) {
             amounts[highestBidder] += highestBid;
         }
